@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jordan Place</title>
     <style>
       body {
@@ -33,6 +34,13 @@
         margin: 0 auto;
       }
 
+      @media (max-width: 1020px) {
+        .container {
+          width: auto;
+          margin: 0 32px;
+        }
+      }
+
       .copy {
         line-height: 1.5;
       }
@@ -47,8 +55,15 @@
         grid-gap: 24px;
       }
 
+      @media (max-width: 1020px) {
+        .cards {
+          display: grid;
+          grid-template-columns: repeat(1, auto);
+          grid-gap: 24px;
+        }
+      }
+
       .card {
-        /* padding: 16px; */
         background-color: #fefefe;
         color: #201736;
         border-radius: 5px;
@@ -60,6 +75,12 @@
         justify-content: center;
         padding: 16px;
         background-color: #b1646d;
+      }
+
+      @media (max-width: 1020px) {
+        .card-image {
+          display: none;
+        }
       }
 
       .card-body {
