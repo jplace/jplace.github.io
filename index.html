@@ -5,54 +5,204 @@
     <title>Jordan Place</title>
     <style>
       body {
-        width: 100%;
-        max-width: 768px;
-        margin: 0 auto;
-        background-color: #fefefe;
-        color: #201736;
+        margin: 0;
         font-family: Verdana, Geneva, sans-serif;
       }
 
-      /* .text-secondary {
-        color: #b1646d;
-      } */
+      .name {
+        margin: 0 0 16px 0;
+      }
 
-      .profile-pic {
-        float: left;
-        margin-right: 16px;
+      .section {
+        padding: 32px 0;
+      }
+
+      .light {
+        background-color: #fefefe;
+        color: #201736;
+      }
+
+      .dark {
+        background-color: #201736;
+        color: #fefefe;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1020px;
+        margin: 0 auto;
+      }
+
+      .copy {
+        line-height: 1.5;
+      }
+
+      .social-button {
+        padding-right: 4px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        grid-gap: 24px;
+      }
+
+      .card {
+        /* padding: 16px; */
+        background-color: #fefefe;
+        color: #201736;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .card-image {
+        display: flex;
+        justify-content: center;
+        padding: 16px;
+        background-color: #b1646d;
+      }
+
+      .card-body {
+        padding: 16px;
+      }
+
+      .card.span-3 {
+        grid-column-start: span 3;
+      }
+
+      .card.span-2 {
+        grid-column-start: span 2;
+      }
+
+      .image {
         border-radius: 2px;
         box-shadow: 2px 2px 5px grey;
       }
 
-      /* header {
-        background-color: #201736;
-      } */
+      .profile-pic {
+        float: left;
+        margin-right: 16px;
+      }
+
+      .project-link {
+        text-decoration: none;
+        color: #cc8d6f;
+        font-weight: 500;
+      }
     </style>
   </head>
-  <body>
-    <header>
-      <img src="/jplace.jpg" class="profile-pic" />
-      <h1>Jordan Place</h1>
-      <p>
-        At work, I think a lot about how to write code that provides value and
-        isn't scary to change often. At home, I think a lot about pop music.
-      </p>
-      <div>
-        <a href="https://twitter.com/jdestaing">Twitter</a>
-        <a href="https://github.com/jplace">GitHub</a>
-        <a href="https://www.instagram.com/tapman90/">Instagram</a>
+  <body class="dark">
+    <header class="section light">
+      <div class="container">
+        <img src="/jplace.jpg" class="image profile-pic" />
+        <h1 class="name">Jordan Place</h1>
+        <p class="copy">
+          At work, I think a lot about how to write code that isn't scary to
+          change often.<br />At home, I think a lot about pop music.
+        </p>
+        <div style="color: #CC8D6F;">
+          <a href="https://twitter.com/jdestaing" class="social-button">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNC41NTdjLS44ODMuMzkyLTEuODMyLjY1Ni0yLjgyOC43NzUgMS4wMTctLjYwOSAxLjc5OC0xLjU3NCAyLjE2NS0yLjcyNC0uOTUxLjU2NC0yLjAwNS45NzQtMy4xMjcgMS4xOTUtLjg5Ny0uOTU3LTIuMTc4LTEuNTU1LTMuNTk0LTEuNTU1LTMuMTc5IDAtNS41MTUgMi45NjYtNC43OTcgNi4wNDUtNC4wOTEtLjIwNS03LjcxOS0yLjE2NS0xMC4xNDgtNS4xNDQtMS4yOSAyLjIxMy0uNjY5IDUuMTA4IDEuNTIzIDYuNTc0LS44MDYtLjAyNi0xLjU2Ni0uMjQ3LTIuMjI5LS42MTYtLjA1NCAyLjI4MSAxLjU4MSA0LjQxNSAzLjk0OSA0Ljg5LS42OTMuMTg4LTEuNDUyLjIzMi0yLjIyNC4wODQuNjI2IDEuOTU2IDIuNDQ0IDMuMzc5IDQuNiAzLjQxOS0yLjA3IDEuNjIzLTQuNjc4IDIuMzQ4LTcuMjkgMi4wNCAyLjE3OSAxLjM5NyA0Ljc2OCAyLjIxMiA3LjU0OCAyLjIxMiA5LjE0MiAwIDE0LjMwNy03LjcyMSAxMy45OTUtMTQuNjQ2Ljk2Mi0uNjk1IDEuNzk3LTEuNTYyIDIuNDU3LTIuNTQ5eiIvPjwvc3ZnPg=="
+          /></a>
+          <a href="https://github.com/jplace" class="social-button">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg=="
+          /></a>
+          <a href="https://www.instagram.com/tapman90/" class="social-button"
+            ><img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMi4xNjNjMy4yMDQgMCAzLjU4NC4wMTIgNC44NS4wNyAzLjI1Mi4xNDggNC43NzEgMS42OTEgNC45MTkgNC45MTkuMDU4IDEuMjY1LjA2OSAxLjY0NS4wNjkgNC44NDkgMCAzLjIwNS0uMDEyIDMuNTg0LS4wNjkgNC44NDktLjE0OSAzLjIyNS0xLjY2NCA0Ljc3MS00LjkxOSA0LjkxOS0xLjI2Ni4wNTgtMS42NDQuMDctNC44NS4wNy0zLjIwNCAwLTMuNTg0LS4wMTItNC44NDktLjA3LTMuMjYtLjE0OS00Ljc3MS0xLjY5OS00LjkxOS00LjkyLS4wNTgtMS4yNjUtLjA3LTEuNjQ0LS4wNy00Ljg0OSAwLTMuMjA0LjAxMy0zLjU4My4wNy00Ljg0OS4xNDktMy4yMjcgMS42NjQtNC43NzEgNC45MTktNC45MTkgMS4yNjYtLjA1NyAxLjY0NS0uMDY5IDQuODQ5LS4wNjl6bTAtMi4xNjNjLTMuMjU5IDAtMy42NjcuMDE0LTQuOTQ3LjA3Mi00LjM1OC4yLTYuNzggMi42MTgtNi45OCA2Ljk4LS4wNTkgMS4yODEtLjA3MyAxLjY4OS0uMDczIDQuOTQ4IDAgMy4yNTkuMDE0IDMuNjY4LjA3MiA0Ljk0OC4yIDQuMzU4IDIuNjE4IDYuNzggNi45OCA2Ljk4IDEuMjgxLjA1OCAxLjY4OS4wNzIgNC45NDguMDcyIDMuMjU5IDAgMy42NjgtLjAxNCA0Ljk0OC0uMDcyIDQuMzU0LS4yIDYuNzgyLTIuNjE4IDYuOTc5LTYuOTguMDU5LTEuMjguMDczLTEuNjg5LjA3My00Ljk0OCAwLTMuMjU5LS4wMTQtMy42NjctLjA3Mi00Ljk0Ny0uMTk2LTQuMzU0LTIuNjE3LTYuNzgtNi45NzktNi45OC0xLjI4MS0uMDU5LTEuNjktLjA3My00Ljk0OS0uMDczem0wIDUuODM4Yy0zLjQwMyAwLTYuMTYyIDIuNzU5LTYuMTYyIDYuMTYyczIuNzU5IDYuMTYzIDYuMTYyIDYuMTYzIDYuMTYyLTIuNzU5IDYuMTYyLTYuMTYzYzAtMy40MDMtMi43NTktNi4xNjItNi4xNjItNi4xNjJ6bTAgMTAuMTYyYy0yLjIwOSAwLTQtMS43OS00LTQgMC0yLjIwOSAxLjc5MS00IDQtNHM0IDEuNzkxIDQgNGMwIDIuMjEtMS43OTEgNC00IDR6bTYuNDA2LTExLjg0NWMtLjc5NiAwLTEuNDQxLjY0NS0xLjQ0MSAxLjQ0cy42NDUgMS40NCAxLjQ0MSAxLjQ0Yy43OTUgMCAxLjQzOS0uNjQ1IDEuNDM5LTEuNDRzLS42NDQtMS40NC0xLjQzOS0xLjQ0eiIvPjwvc3ZnPg=="
+          /></a>
+        </div>
       </div>
     </header>
-    <article>
-      <h2>Here's what I've been up to recently.</h2>
-      <div>
-        <div><h3>Soundboy</h3></div>
-        <div><h3>MySQL → Google Sheets</h3></div>
-        <div><h3>Spotify PowerHour</h3></div>
-        <div><h3>Music My Brain Likes</h3></div>
-        <div><h3>Detecting iTunes file corruption</h3></div>
+    <article class="section dark">
+      <div class="container">
+        <p class="copy">Here's what I've been up to recently.</p>
+        <div class="cards">
+          <div class="card span-3">
+            <div class="card-image">
+              <img src="/soundboy.png" class="image" />
+            </div>
+            <div class="card-body">
+              <h3>Soundboy</h3>
+              <p>
+                Group source music for the Transposit happy hour
+              </p>
+              <p>
+                <a
+                  href="https://priceless-allen-a1935d.netlify.com/"
+                  class="project-link"
+                  >Check it out</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="card" style="grid-column-start: span 3;">
+            <div class="card-body">
+              <h3>Spotify PowerHour</h3>
+              <p>
+                Play 60 songs in 60 minutes from your Spotify account
+              </p>
+              <p>
+                <a
+                  href="https://power-hour-vobvi.transposit.io/"
+                  class="project-link"
+                  >Check it out</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>MySQL → Google Sheets</h3>
+              <p>
+                Convert MySQL output into a Google sheet. Annotate rows and
+                columns while you debug.
+              </p>
+              <p>
+                <a
+                  href="https://priceless-allen-a1935d.netlify.com/"
+                  class="project-link"
+                  >Check it out</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h3>Music My Brain Likes</h3>
+              <p>
+                My DJ mix series. Set your expectations to "low".
+              </p>
+              <p>
+                <a
+                  href="https://priceless-allen-a1935d.netlify.com/"
+                  class="project-link"
+                  >Check it out</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>Detecting iTunes file corruption</h3>
+              <p>
+                Python script to analyze my music corruption and find corrupt
+                files. How do they get corrupted? I do not know.
+              </p>
+              <p>
+                <a
+                  href="https://priceless-allen-a1935d.netlify.com/"
+                  class="project-link"
+                  >Check it out</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </article>
-    <footer></footer>
   </body>
 </html>
