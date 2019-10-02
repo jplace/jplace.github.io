@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jordan Place</title>
     <style>
+      /**** layout ****/
+
       body {
         margin: 0;
         font-family: Verdana, Geneva, sans-serif;
-      }
-
-      .name {
-        margin: 0 0 16px 0;
-      }
-
-      .section {
-        padding: 32px 0;
       }
 
       .light {
@@ -28,9 +22,12 @@
         color: #fefefe;
       }
 
+      .section {
+        padding: 32px 0;
+      }
+
       .container {
-        width: 100%;
-        max-width: 1020px;
+        width: 1020px;
         margin: 0 auto;
       }
 
@@ -45,6 +42,22 @@
         line-height: 1.5;
       }
 
+      .image {
+        border-radius: 2px;
+        box-shadow: 2px 2px 5px grey;
+      }
+
+      /**** helpers ****/
+
+      .profile-pic {
+        float: left;
+        margin-right: 24px;
+      }
+
+      .name {
+        margin: 0 0 16px 0;
+      }
+
       .social-button {
         padding-right: 4px;
       }
@@ -53,14 +66,6 @@
         display: grid;
         grid-template-columns: repeat(6, auto);
         grid-gap: 24px;
-      }
-
-      @media (max-width: 1020px) {
-        .cards {
-          display: grid;
-          grid-template-columns: repeat(1, auto);
-          grid-gap: 24px;
-        }
       }
 
       .card {
@@ -77,32 +82,34 @@
         background-color: #b1646d;
       }
 
-      @media (max-width: 1020px) {
-        .card-image {
-          display: none;
-        }
-      }
-
       .card-body {
         padding: 16px;
       }
 
-      .card.span-3 {
+      .card.big {
         grid-column-start: span 3;
       }
 
-      .card.span-2 {
+      .card.small {
         grid-column-start: span 2;
       }
 
-      .image {
-        border-radius: 2px;
-        box-shadow: 2px 2px 5px grey;
-      }
+      @media (max-width: 1020px) {
+        .cards {
+          grid-template-columns: repeat(1, auto);
+        }
 
-      .profile-pic {
-        float: left;
-        margin-right: 24px;
+        .card-image {
+          display: none;
+        }
+
+        .card.big {
+          grid-column-start: span 1;
+        }
+
+        .card.small {
+          grid-column-start: span 1;
+        }
       }
 
       .project-link {
@@ -119,7 +126,7 @@
         <h1 class="name">Jordan Place</h1>
         <p class="copy">
           At work, I think a lot about how to write code that isn't scary to
-          change often.<br />At home, I think a lot about pop music.
+          change often. At home, I think a lot about pop music.
         </p>
         <div style="color: #CC8D6F;">
           <a href="https://twitter.com/jdestaing" class="social-button">
@@ -137,11 +144,11 @@
         </div>
       </div>
     </header>
-    <article class="section dark">
+    <main class="section dark">
       <div class="container">
         <p class="copy">Here's what I've been up to recently.</p>
         <div class="cards">
-          <div class="card span-3">
+          <article class="card big">
             <div class="card-image">
               <img src="img/soundboy.png" class="image" />
             </div>
@@ -158,8 +165,8 @@
                 >
               </p>
             </div>
-          </div>
-          <div class="card" style="grid-column-start: span 3;">
+          </article>
+          <article class="card big">
             <div class="card-image">
               <img src="img/powerhour.png" class="image" />
             </div>
@@ -176,8 +183,8 @@
                 >
               </p>
             </div>
-          </div>
-          <div class="card" style="grid-column-start: span 2;">
+          </article>
+          <article class="card small">
             <div class="card-body">
               <h3>MySQL → Google Sheets</h3>
               <p>
@@ -192,9 +199,8 @@
                 >
               </p>
             </div>
-          </div>
-
-          <div class="card" style="grid-column-start: span 2;">
+          </article>
+          <article class="card small">
             <div class="card-body">
               <h3>Music My Brain Likes</h3>
               <p>
@@ -208,8 +214,8 @@
                 >
               </p>
             </div>
-          </div>
-          <div class="card" style="grid-column-start: span 2;">
+          </article>
+          <article class="card small">
             <div class="card-body">
               <h3>Detect iTunes corruption</h3>
               <p>
@@ -224,9 +230,9 @@
                 >
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
-    </article>
+    </main>
   </body>
 </html>
