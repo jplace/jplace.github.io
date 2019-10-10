@@ -2,7 +2,7 @@
 
 Personal websites are a fun way to express yourself on the Internet. Plus, they're great for learning web development.
 
-This tutorial will makes a [GitHub Page](https://pages.github.com), but this advice is applicable to a static site hosted anywhere.
+In this tutorial, you will make a [GitHub Page](https://pages.github.com), but this advice is applicable to static sites hosted anywhere.
 
 ## Getting started
 
@@ -43,7 +43,7 @@ View your site in a browser at [http://localhost:7999/](http://localhost:7999/).
 
 ## Deploying to GitHub
 
-You will need to create a new repository named _username_.github.io, where username is your username. If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.
+You will need to create a new repository named _username_.github.io, where _username_ is your GitHub username. If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.
 
 Create a new repository [here](https://github.com/new).
 
@@ -62,7 +62,7 @@ GitHub will automatically update your hosted site everytime you push to _origin/
 
 Decide what your site should look like. This is the fun part, but it's also the hardest part.
 
-> New web developers often try to design and code at the same time. Don't do this! Coding is hard enough. Draw out your design first (on paper or in your mind).
+New web developers often try to design and code at the same time. Don't do this! Coding is hard enough. Draw out your design first (on paper or in your mind).
 
 ### Sourcing ideas
 
@@ -72,17 +72,17 @@ If you are new to web development, ship something simple first. Put your name, a
 
 If you have previous experience, consider something more ambitious. Include a blurb about yourself, a picture, and links to work you've done. Any work is worth linking to! Written pieces, GitHub projects, music productions, etc.
 
-> If you don't want to design your own site, I recommend copying mine: [https://jplace.github.io/](https://jplace.github.io/). View the source of the page or see [my repository](https://github.com/jplace/jplace.github.io/).
+If you don't want to design your own site, I recommend copying mine: [https://jplace.github.io/](https://jplace.github.io/). View the source of the page or see [my repository](https://github.com/jplace/jplace.github.io/).
 
 ### Layout
 
-In HTML, each element has a display value. Make sure you understand the difference between [block and inline](https://www.w3schools.com/html/html_blocks.asp) before starting to code.
+In HTML, each element has a _display_ value. Make sure you understand the difference between [block and inline](https://www.w3schools.com/html/html_blocks.asp) before starting to code.
 
 Your layout will be almost entirely block elements. You will use inline elements to style text or horizantally-align links.
 
 The layout of elements can be enhanced with modern CSS features: [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and [grid](https://hacks.mozilla.org/2017/10/an-introduction-to-css-grid-layout-part-1/). Reading about them can be tedious and confusing. [Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](http://cssgridgarden.com/) are games to teach you these concepts.
 
-> If you need to vertically-center something, you should use flexbox or grid.
+Tip: if you need to vertically-center something, use flexbox or grid.
 
 ### Colors
 
@@ -159,7 +159,7 @@ If your site's CSS supports small screen sizes, add this `<meta>` tag to `<head>
 
 ## Other approaches
 
-Some web developers prefer not to write raw CSS. Instead, they adopt CSS frameworks or static site generators.
+Some web developers prefer not to write raw CSS. Instead, they adopt CSS frameworks, static site generators, or website builders.
 
 ### CSS Frameworks
 
@@ -167,7 +167,7 @@ In my opinion, these are quite hard to use if you don't already know CSS. But, t
 
 #### Light-weight
 
-Light-weight frameworks provide helpers for "common" things in CSS. They lead you to good, responsive designs with you dictating how your site should look.
+Light-weight frameworks provide helpers for "common" things in CSS. They lead you to good, responsive designs without dictating how your site should look.
 
 - [tachyons](https://tachyons.io/)
 - [skeleton](http://getskeleton.com/)
@@ -178,14 +178,18 @@ Light-weight frameworks provide helpers for "common" things in CSS. They lead yo
 
 Heavy-weight frameworks provide components you'll need to make a site. These include cards, buttons, nav, etc. They very much dictate how your site will look.
 
-- Twitter's [Bootstrap](https://getbootstrap.com/)
-- Google's [Materialize](https://materializecss.com/)
-- GitHub's [Primer](https://primer.style/css/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Materialize](https://materializecss.com/)
+- [Primer](https://primer.style/css/)
 
 ### Static site generators
 
-A "static site generator" is a pieces of software that injects custom content into an HTML template. It outputs HTML files to be served from your github.io site.
+A "static site generator" is a piece of software that injects custom content into an HTML template. It outputs HTML files to be served from your github.io site.
 
-Static site generators are most commonly used for blogs. They generate a page for each blog post without the developer having to maintain HTML on each page separately. They are generally useful for sites with lots of content.
+Static site generators are most commonly used for blogs. They generate a page for each blog post without the developer having to maintain HTML on each page individually. They are generally useful for sites with lots of content.
 
 If your personal website will have lots on content, try out [Jekyll with GitHub Pages](https://help.github.com/en/articles/about-github-pages-and-jekyll). You can adopt a pre-made themes for Jekyll to avoid having to write HTML or CSS at all.
+
+### Website builders
+
+You can also google "free website builders" to find drag-n-drop tools for building sites. I have no prior experience with these, so I cannot recommend any.
