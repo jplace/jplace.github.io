@@ -88,7 +88,7 @@ Tip: if you need to vertically-center something, use flexbox or grid.
 
 Intelligent use of color is important to a site. I use [Colormind](http://colormind.io/bootstrap/) to generate color schemes. I like that it explains how to use the colors effectively!
 
-You can google "color scheme generators" for other ideas.
+I also love [color.lol](https://colors.lol/)!
 
 ### Fonts
 
