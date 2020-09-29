@@ -159,7 +159,7 @@ If your site's CSS supports small screen sizes, add this `<meta>` tag to `<head>
 
 ## Other approaches
 
-Some web developers prefer not to write raw CSS. Instead, they adopt CSS frameworks, static site generators, or website builders.
+Some developers prefer not to write raw CSS. Instead, they adopt CSS frameworks, static site generators with themese, or website builders.
 
 ### CSS Frameworks
 
@@ -169,9 +169,9 @@ In my opinion, these are quite hard to use if you don't already know CSS. But, t
 
 Light-weight frameworks provide helpers for "common" things in CSS. They lead you to good, responsive designs without dictating how your site should look.
 
+- [tailwind](https://tailwindcss.com/)
 - [tachyons](https://tachyons.io/)
 - [skeleton](http://getskeleton.com/)
-- [tailwind](https://tailwindcss.com/)
 - [bulma](https://bulma.io/)
 
 #### Heavy-weight
