@@ -38,7 +38,8 @@
       /**** layout ****/
 
       body {
-        position: relative;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
         min-height: 100vh;
         margin: 0;
         font-family: Verdana, Geneva, sans-serif;
@@ -202,16 +203,11 @@
         }
       }
 
-      body {
-        padding-bottom: 192px;
-      }
-
       .footer {
-        position: absolute;
-        right: 0;
-        bottom: 0;
+        position: relative;
         width: 512px;
         height: 192px;
+        justify-self: right;
       }
 
       .footer-bg {
@@ -235,14 +231,10 @@
       }
 
       @media (max-width: 1020px) {
-        body {
-          padding-bottom: 0;
-        }
-
         .footer {
-          position: relative;
           width: auto;
           height: auto;
+          justify-self: auto;
         }
 
         .footer-bg {
