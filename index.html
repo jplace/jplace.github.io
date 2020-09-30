@@ -25,7 +25,6 @@
       sizes="32x32"
       href="/images/favicon.png"
     />
-
     <title>Jordan Place</title>
     <style>
       /**** global ****/
@@ -131,6 +130,10 @@
         grid-area: 2 / 3 / span 1 / span 1;
       }
 
+      .card:nth-child(5) {
+        grid-area: 3 / 3 / span 1 / span 1;
+      }
+
       .card-image {
         display: flex;
         justify-content: center;
@@ -167,13 +170,13 @@
         margin-right: 16px;
       }
 
-      .project-link {
+      .card-link {
         text-decoration: none;
         color: #cc8d6f;
         font-weight: 500;
       }
 
-      .project-link:hover {
+      .card-link:hover {
         text-decoration: underline;
       }
 
@@ -223,12 +226,10 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        width: 100%;
         padding: 0 16px 16px 0;
       }
 
       .footer-text {
-        float: right;
         width: 256px;
         text-align: right;
       }
@@ -255,7 +256,6 @@
         }
 
         .footer-text {
-          float: none;
           width: auto;
           text-align: center;
         }
@@ -319,12 +319,10 @@
                 </p>
               </div>
               <div class="card-links">
-                <a href="https://pronouns.work/" class="project-link"
+                <a href="https://pronouns.work/" class="card-link"
                   >Check it out</a
                 >
-                <a
-                  href="https://github.com/jplace/pronouns"
-                  class="project-link"
+                <a href="https://github.com/jplace/pronouns" class="card-link"
                   >View the code</a
                 >
               </div>
@@ -345,7 +343,7 @@
               <div class="card-links">
                 <a
                   href="https://soundcloud.com/tapman90/tracks"
-                  class="project-link"
+                  class="card-link"
                   >Listen to my tracks</a
                 >
               </div>
@@ -361,7 +359,7 @@
                 </p>
               </div>
               <div class="card-links">
-                <a href="https://www.radicalxchange.org" class="project-link"
+                <a href="https://www.radicalxchange.org" class="card-link"
                   >Check it out</a
                 >
               </div>
@@ -379,7 +377,7 @@
               <div class="card-links">
                 <a
                   href="https://github.com/jplace/starter-11ty"
-                  class="project-link"
+                  class="card-link"
                   >View code</a
                 >
               </div>
