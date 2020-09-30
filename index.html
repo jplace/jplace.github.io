@@ -7,7 +7,14 @@
     <style>
       /**** layout ****/
 
+      * {
+        box-sizing: border-box;
+      }
+
       body {
+        position: relative;
+        min-height: 100vh;
+        padding-bottom: 64px;
         margin: 0;
         font-family: Verdana, Geneva, sans-serif;
       }
@@ -64,15 +71,34 @@
 
       .cards {
         display: grid;
-        grid-template-columns: repeat(6, auto);
+        grid-template-columns: repeat(3, auto);
         grid-gap: 24px;
       }
 
       .card {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
         background-color: #fefefe;
         color: #201736;
         border-radius: 5px;
         overflow: hidden;
+      }
+
+      .card:nth-child(1) {
+        grid-area: 1 / 1 / span 2 / span 1;
+      }
+
+      .card:nth-child(2) {
+        grid-area: 1 / 2 / span 2 / span 1;
+      }
+
+      .card:nth-child(3) {
+        grid-area: 1 / 3 / span 1 / span 1;
+      }
+
+      .card:nth-child(4) {
+        grid-area: 2 / 3 / span 1 / span 1;
       }
 
       .card-image {
@@ -87,21 +113,21 @@
         );
       }
 
+      .card-image img {
+        width: 100%;
+      }
+
       .card-body {
         padding: 16px;
-      }
-
-      .card.big {
-        grid-column-start: span 3;
-      }
-
-      .card.small {
-        grid-column-start: span 2;
       }
 
       @media (max-width: 1020px) {
         .cards {
           grid-template-columns: repeat(1, auto);
+        }
+
+        .card {
+          grid-area: auto !important;
         }
 
         .card-image {
@@ -120,18 +146,58 @@
       .project-link {
         text-decoration: none;
         color: #cc8d6f;
-        font-weight: 500;
+        font-weight: bold;
+      }
+
+      .footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 128px;
+        overflow: hidden;
+      }
+
+      .footer-bg {
+        position: absolute;
+        bottom: calc(-1 * 100vw);
+        height: calc(64px + (1 * 100vw));
+        width: calc(100vw + (1 * 100vw));
+        background: linear-gradient(to left, #3ca55c, #b5ac49);
+        transform: rotate(-6deg);
+        /* tan(45deg) = 1 */
+      }
+
+      .footer-content {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        left: 0;
+      }
+
+      .footer-text {
+        float: right;
+        width: 256px;
+        text-align: right;
+      }
+
+      .footer-text p {
+        margin: 0;
+      }
+
+      .tutorial-link {
+        color: inherit;
       }
     </style>
   </head>
   <body class="dark">
     <header class="section light">
       <div class="container">
-        <img src="/img/jplace.jpg" class="image profile-pic" />
+        <img src="/images/jplace.jpg" class="image profile-pic" />
         <h1 class="name">Jordan Place</h1>
         <p class="copy">
           At work, I think a lot about how to write code that isn't scary to
-          change often. At home, I think a lot about dancehall music.
+          change often. At home, I think a lot about pop music.
         </p>
         <div style="color: #cc8d6f">
           <a
@@ -168,13 +234,13 @@
       <div class="container">
         <p class="copy">Here's what I've been up to recently.</p>
         <div class="cards">
-          <article class="card big">
+          <article class="card">
             <div class="card-image">
-              <img src="/img/pronouns.png" class="image" />
+              <img src="/images/pronouns.jpg" class="image" />
             </div>
             <div class="card-body">
               <h3>Navigating Pronouns in the Workplace</h3>
-              <p>I turned my friends' instagram post into a website!</p>
+              <p>I turned my friends' Instagram post into a website!</p>
               <p>
                 <a href="https://pronouns.work/" class="project-link"
                   >Check it out</a
@@ -187,9 +253,9 @@
               </p>
             </div>
           </article>
-          <article class="card big">
+          <article class="card">
             <div class="card-image">
-              <img src="/img/rxc.png" class="image" />
+              <img src="/images/music.png" class="image" />
             </div>
             <div class="card-body">
               <h3>Music Production</h3>
@@ -206,10 +272,7 @@
               </p>
             </div>
           </article>
-          <article class="card small">
-            <div class="card-image">
-              <img src="/img/rxc.png" class="image" />
-            </div>
+          <article class="card">
             <div class="card-body">
               <h3>RadicalxChange's New Website</h3>
               <p>I turned my friends' Instagram post into a website!</p>
@@ -225,31 +288,9 @@
               </p>
             </div>
           </article>
-          <article class="card small">
-            <div class="card-image">
-              <img src="/img/rxc.png" class="image" />
-            </div>
+          <article class="card">
             <div class="card-body">
               <h3>11ty Starter</h3>
-              <p>I turned my friends' Instagram post into a website!</p>
-              <p>
-                <a href="https://pronouns.work/" class="project-link"
-                  >Check it out</a
-                >
-                <a
-                  href="https://github.com/jplace/pronouns"
-                  class="project-link"
-                  >View code</a
-                >
-              </p>
-            </div>
-          </article>
-          <article class="card small">
-            <div class="card-image">
-              <img src="/img/rxc.png" class="image" />
-            </div>
-            <div class="card-body">
-              <h3>One more thing I do?</h3>
               <p>I turned my friends' Instagram post into a website!</p>
               <p>
                 <a href="https://pronouns.work/" class="project-link"
@@ -266,14 +307,47 @@
         </div>
       </div>
     </main>
-    <footer>
-      <span
-        >Hey! This website is an example for my personal website tutorial. It's
-        written for entry-level developers.</span
-      ><a
-        href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
-        >Check out the tutorial</a
-      >
+    <footer class="footer">
+      <div class="footer-bg"></div>
+      <div class="footer-content">
+        <div class="">
+          <div class="footer-text">
+            <p class="copy">
+              <span
+                >Hey! This website is part of my tutorial for building personal
+                websites.&nbsp;</span
+              ><a
+                href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
+                class="tutorial-link"
+                >Read the tutorial</a
+              >
+            </p>
+            <!--<p>
+              <a
+                href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
+                >Read the tutorial</a
+              >
+            </p>-->
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="footer-rotate">
+        <div class="footer-correct">
+          <div class="container">
+            <div class="footer-text">
+              <span
+                >Hey! This website is part of my tutorial for building personal
+                websites.</span
+              ><a
+                href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
+                >Read the tutorial</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
     </footer>
   </body>
 </html>
