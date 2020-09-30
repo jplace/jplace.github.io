@@ -14,7 +14,7 @@
       body {
         position: relative;
         min-height: 100vh;
-        padding-bottom: 64px;
+        padding-bottom: 192px;
         margin: 0;
         font-family: Verdana, Geneva, sans-serif;
       }
@@ -153,26 +153,24 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        left: 0;
-        height: 128px;
-        overflow: hidden;
+        width: 512px;
+        height: 192px;
       }
 
       .footer-bg {
         position: absolute;
-        bottom: calc(-1 * 100vw);
-        height: calc(64px + (1 * 100vw));
-        width: calc(100vw + (1 * 100vw));
+        width: 100%;
+        height: 100%;
         background: linear-gradient(to left, #3ca55c, #b5ac49);
-        transform: rotate(-6deg);
-        /* tan(45deg) = 1 */
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
       }
 
       .footer-content {
         position: absolute;
-        right: 16px;
-        bottom: 16px;
-        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 0 16px 16px 0;
       }
 
       .footer-text {
@@ -183,6 +181,34 @@
 
       .footer-text p {
         margin: 0;
+      }
+
+      @media (max-width: 1020px) {
+        body {
+          padding-bottom: 0;
+        }
+
+        .footer {
+          position: relative;
+          width: auto;
+          height: auto;
+        }
+
+        .footer-bg {
+          clip-path: none;
+          z-index: -1;
+        }
+
+        .footer-content {
+          position: static;
+          padding: 16px 32px;
+        }
+
+        .footer-text {
+          float: none;
+          width: auto;
+          text-align: center;
+        }
       }
 
       .tutorial-link {
@@ -314,7 +340,7 @@
           <div class="footer-text">
             <p class="copy">
               <span
-                >Hey! This website is part of my tutorial for building personal
+                >Hey!</br>This website is part of my tutorial for building personal
                 websites.&nbsp;</span
               ><a
                 href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
