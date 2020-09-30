@@ -76,13 +76,19 @@ If you don't want to design your own site, I recommend copying mine: [https://jp
 
 ### Layout
 
-In HTML, each element has a _display_ value. Make sure you understand the difference between [block and inline](https://www.w3schools.com/html/html_blocks.asp) before starting to code.
+In HTML, each element has a _display_ value. Make sure you understand the difference between [block and inline](https://www.w3schools.com/html/html_blocks.asp) before starting to code. Your layout will be almost entirely block elements. You will use inline elements to style text or horizantally-align links.
 
-Your layout will be almost entirely block elements. You will use inline elements to style text or horizantally-align links.
+Each element also has a box-sizing algorithm. I recommend using [border-box box-sizing](https://css-tricks.com/almanac/properties/b/box-sizing/) for everything. It's much more intuitivie than the content-box box-sizing (which is the default). To apploy border-box to all elements, include this CSS anywhere in your styles.
 
-The layout of elements can be enhanced with modern CSS features: [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and [grid](https://hacks.mozilla.org/2017/10/an-introduction-to-css-grid-layout-part-1/). Reading about them can be tedious and confusing. [Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](http://cssgridgarden.com/) are games to teach you these concepts.
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+```
 
-Tip: if you need to vertically-center something, use flexbox or grid.
+When laying out elements, reach for modern CSS features: [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and [grid](https://hacks.mozilla.org/2017/10/an-introduction-to-css-grid-layout-part-1/). Beware that reading about them can be tedious and confusing. I recommend [Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](http://cssgridgarden.com/) to quickly learn these features.
 
 ### Colors
 
@@ -150,6 +156,30 @@ CSS gradients add texture to your site. I suggest [cssgradient.io](https://cssgr
 #### Responsive Design
 
 If your site's CSS supports small screen sizes, add this `<meta>` tag to `<head>`. If it doesn't, omit this tag: mobile devices will try their best to size the webpage so that it looks good.
+
+```html
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+```
+
+### Website polish
+
+When you're website is looking good, add these finish touches!
+
+#### Favicon
+
+A favicon is 32px-by-32px image that shows up in a browser tab next to your site title. I recommend using [favicon.io's emoji generator](https://favicon.io/emoji-favicons/) for painless favicons.
+
+```html
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+</head>
+```
+
+#### OpenGraph tags
+
+[OpenGraph](https://ogp.me/) tells clients like Twitter or iMessage how to embellish your website when it is linked to. You can include a title, description and image for them to show.
 
 ```html
 <head>

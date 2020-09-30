@@ -3,18 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jordan Place" />
+    <meta property="og:site_name" content="Jordan Place" />
+    <meta property="og:url" content="https://jplace.github.io/" />
+    <meta
+      property="og:image"
+      content="https://jplace.github.io/images/jplace.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://jplace.github.io/images/jplace.jpg"
+    />
+    <meta property="og:image:width" content="100" />
+    <meta property="og:image:height" content="150" />
+    <meta property="og:description" content="Jordan Place's personal website" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon.png"
+    />
+
     <title>Jordan Place</title>
     <style>
-      /**** layout ****/
+      /**** global ****/
 
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
+
+      /**** layout ****/
 
       body {
         position: relative;
         min-height: 100vh;
-        padding-bottom: 192px;
         margin: 0;
         font-family: Verdana, Geneva, sans-serif;
       }
@@ -51,7 +77,7 @@
 
       .image {
         border-radius: 2px;
-        box-shadow: 2px 2px 5px grey;
+        box-shadow: 2px 2px 5px black;
       }
 
       /**** helpers ****/
@@ -67,6 +93,10 @@
 
       .social-button {
         padding-right: 4px;
+      }
+
+      .body-text {
+        margin: 0 0 24px 0;
       }
 
       .cards {
@@ -118,7 +148,33 @@
       }
 
       .card-body {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        height: 100%;
         padding: 16px;
+      }
+
+      .card-header {
+        margin: 0 0 16px 0;
+      }
+
+      .card-description {
+        margin: 0 0 16px 0;
+      }
+
+      .card-links a:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      .project-link {
+        text-decoration: none;
+        color: #cc8d6f;
+        font-weight: 500;
+      }
+
+      .project-link:hover {
+        text-decoration: underline;
       }
 
       @media (max-width: 1020px) {
@@ -143,10 +199,8 @@
         }
       }
 
-      .project-link {
-        text-decoration: none;
-        color: #cc8d6f;
-        font-weight: bold;
+      body {
+        padding-bottom: 192px;
       }
 
       .footer {
@@ -177,10 +231,6 @@
         float: right;
         width: 256px;
         text-align: right;
-      }
-
-      .footer-text p {
-        margin: 0;
       }
 
       @media (max-width: 1020px) {
@@ -227,12 +277,11 @@
         </p>
         <div style="color: #cc8d6f">
           <a
-            href="https://twitter.com/jdestaing"
+            href="/files/jordan-place.pdf"
             class="social-button"
-            title="Twitter"
-          >
-            <img
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNC41NTdjLS44ODMuMzkyLTEuODMyLjY1Ni0yLjgyOC43NzUgMS4wMTctLjYwOSAxLjc5OC0xLjU3NCAyLjE2NS0yLjcyNC0uOTUxLjU2NC0yLjAwNS45NzQtMy4xMjcgMS4xOTUtLjg5Ny0uOTU3LTIuMTc4LTEuNTU1LTMuNTk0LTEuNTU1LTMuMTc5IDAtNS41MTUgMi45NjYtNC43OTcgNi4wNDUtNC4wOTEtLjIwNS03LjcxOS0yLjE2NS0xMC4xNDgtNS4xNDQtMS4yOSAyLjIxMy0uNjY5IDUuMTA4IDEuNTIzIDYuNTc0LS44MDYtLjAyNi0xLjU2Ni0uMjQ3LTIuMjI5LS42MTYtLjA1NCAyLjI4MSAxLjU4MSA0LjQxNSAzLjk0OSA0Ljg5LS42OTMuMTg4LTEuNDUyLjIzMi0yLjIyNC4wODQuNjI2IDEuOTU2IDIuNDQ0IDMuMzc5IDQuNiAzLjQxOS0yLjA3IDEuNjIzLTQuNjc4IDIuMzQ4LTcuMjkgMi4wNCAyLjE3OSAxLjM5NyA0Ljc2OCAyLjIxMiA3LjU0OCAyLjIxMiA5LjE0MiAwIDE0LjMwNy03LjcyMSAxMy45OTUtMTQuNjQ2Ljk2Mi0uNjk1IDEuNzk3LTEuNTYyIDIuNDU3LTIuNTQ5eiIvPjwvc3ZnPg=="
+            title="My Resume"
+            ><img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTEuMzYyIDJjNC4xNTYgMCAyLjYzOCA2IDIuNjM4IDZzNi0xLjY1IDYgMi40NTd2MTEuNTQzaC0xNnYtMjBoNy4zNjJ6bS44MjctMmgtMTAuMTg5djI0aDIwdi0xNC4zODZjMC0yLjM5MS02LjY0OC05LjYxNC05LjgxMS05LjYxNHptNC44MTEgMTNoLTEwdi0xaDEwdjF6bTAgMmgtMTB2MWgxMHYtMXptMCAzaC0xMHYxaDEwdi0xeiIvPjwvc3ZnPg=="
           /></a>
           <a
             href="https://github.com/jplace"
@@ -243,91 +292,97 @@
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg=="
           /></a>
           <a
-            href="https://www.instagram.com/tapman90/"
+            href="https://twitter.com/jdestaing"
             class="social-button"
-            title="Instagram"
-            ><img
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMi4xNjNjMy4yMDQgMCAzLjU4NC4wMTIgNC44NS4wNyAzLjI1Mi4xNDggNC43NzEgMS42OTEgNC45MTkgNC45MTkuMDU4IDEuMjY1LjA2OSAxLjY0NS4wNjkgNC44NDkgMCAzLjIwNS0uMDEyIDMuNTg0LS4wNjkgNC44NDktLjE0OSAzLjIyNS0xLjY2NCA0Ljc3MS00LjkxOSA0LjkxOS0xLjI2Ni4wNTgtMS42NDQuMDctNC44NS4wNy0zLjIwNCAwLTMuNTg0LS4wMTItNC44NDktLjA3LTMuMjYtLjE0OS00Ljc3MS0xLjY5OS00LjkxOS00LjkyLS4wNTgtMS4yNjUtLjA3LTEuNjQ0LS4wNy00Ljg0OSAwLTMuMjA0LjAxMy0zLjU4My4wNy00Ljg0OS4xNDktMy4yMjcgMS42NjQtNC43NzEgNC45MTktNC45MTkgMS4yNjYtLjA1NyAxLjY0NS0uMDY5IDQuODQ5LS4wNjl6bTAtMi4xNjNjLTMuMjU5IDAtMy42NjcuMDE0LTQuOTQ3LjA3Mi00LjM1OC4yLTYuNzggMi42MTgtNi45OCA2Ljk4LS4wNTkgMS4yODEtLjA3MyAxLjY4OS0uMDczIDQuOTQ4IDAgMy4yNTkuMDE0IDMuNjY4LjA3MiA0Ljk0OC4yIDQuMzU4IDIuNjE4IDYuNzggNi45OCA2Ljk4IDEuMjgxLjA1OCAxLjY4OS4wNzIgNC45NDguMDcyIDMuMjU5IDAgMy42NjgtLjAxNCA0Ljk0OC0uMDcyIDQuMzU0LS4yIDYuNzgyLTIuNjE4IDYuOTc5LTYuOTguMDU5LTEuMjguMDczLTEuNjg5LjA3My00Ljk0OCAwLTMuMjU5LS4wMTQtMy42NjctLjA3Mi00Ljk0Ny0uMTk2LTQuMzU0LTIuNjE3LTYuNzgtNi45NzktNi45OC0xLjI4MS0uMDU5LTEuNjktLjA3My00Ljk0OS0uMDczem0wIDUuODM4Yy0zLjQwMyAwLTYuMTYyIDIuNzU5LTYuMTYyIDYuMTYyczIuNzU5IDYuMTYzIDYuMTYyIDYuMTYzIDYuMTYyLTIuNzU5IDYuMTYyLTYuMTYzYzAtMy40MDMtMi43NTktNi4xNjItNi4xNjItNi4xNjJ6bTAgMTAuMTYyYy0yLjIwOSAwLTQtMS43OS00LTQgMC0yLjIwOSAxLjc5MS00IDQtNHM0IDEuNzkxIDQgNGMwIDIuMjEtMS43OTEgNC00IDR6bTYuNDA2LTExLjg0NWMtLjc5NiAwLTEuNDQxLjY0NS0xLjQ0MSAxLjQ0cy42NDUgMS40NCAxLjQ0MSAxLjQ0Yy43OTUgMCAxLjQzOS0uNjQ1IDEuNDM5LTEuNDRzLS42NDQtMS40NC0xLjQzOS0xLjQ0eiIvPjwvc3ZnPg=="
-          /></a>
-          <a href="/jordan-place.pdf" class="social-button" title="My Resume"
-            ><img
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTEuMzYyIDJjNC4xNTYgMCAyLjYzOCA2IDIuNjM4IDZzNi0xLjY1IDYgMi40NTd2MTEuNTQzaC0xNnYtMjBoNy4zNjJ6bS44MjctMmgtMTAuMTg5djI0aDIwdi0xNC4zODZjMC0yLjM5MS02LjY0OC05LjYxNC05LjgxMS05LjYxNHptNC44MTEgMTNoLTEwdi0xaDEwdjF6bTAgMmgtMTB2MWgxMHYtMXptMCAzaC0xMHYxaDEwdi0xeiIvPjwvc3ZnPg=="
+            title="Twitter"
+          >
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNC41NTdjLS44ODMuMzkyLTEuODMyLjY1Ni0yLjgyOC43NzUgMS4wMTctLjYwOSAxLjc5OC0xLjU3NCAyLjE2NS0yLjcyNC0uOTUxLjU2NC0yLjAwNS45NzQtMy4xMjcgMS4xOTUtLjg5Ny0uOTU3LTIuMTc4LTEuNTU1LTMuNTk0LTEuNTU1LTMuMTc5IDAtNS41MTUgMi45NjYtNC43OTcgNi4wNDUtNC4wOTEtLjIwNS03LjcxOS0yLjE2NS0xMC4xNDgtNS4xNDQtMS4yOSAyLjIxMy0uNjY5IDUuMTA4IDEuNTIzIDYuNTc0LS44MDYtLjAyNi0xLjU2Ni0uMjQ3LTIuMjI5LS42MTYtLjA1NCAyLjI4MSAxLjU4MSA0LjQxNSAzLjk0OSA0Ljg5LS42OTMuMTg4LTEuNDUyLjIzMi0yLjIyNC4wODQuNjI2IDEuOTU2IDIuNDQ0IDMuMzc5IDQuNiAzLjQxOS0yLjA3IDEuNjIzLTQuNjc4IDIuMzQ4LTcuMjkgMi4wNCAyLjE3OSAxLjM5NyA0Ljc2OCAyLjIxMiA3LjU0OCAyLjIxMiA5LjE0MiAwIDE0LjMwNy03LjcyMSAxMy45OTUtMTQuNjQ2Ljk2Mi0uNjk1IDEuNzk3LTEuNTYyIDIuNDU3LTIuNTQ5eiIvPjwvc3ZnPg=="
           /></a>
         </div>
       </div>
     </header>
     <main class="section dark">
       <div class="container">
-        <p class="copy">Here's what I've been up to recently.</p>
+        <p class="body-text copy">Here's what I've been up to recently.</p>
         <div class="cards">
           <article class="card">
             <div class="card-image">
-              <img src="/images/pronouns.jpg" class="image" />
+              <img src="/images/pronouns.jpg" />
             </div>
             <div class="card-body">
-              <h3>Navigating Pronouns in the Workplace</h3>
-              <p>I turned my friends' Instagram post into a website!</p>
-              <p>
+              <div>
+                <h3 class="card-header">Pronouns in the Workplace</h3>
+                <p class="card-description copy">
+                  I built a website clarifying etiquette around pronouns in the
+                  workplace.
+                </p>
+              </div>
+              <div class="card-links">
                 <a href="https://pronouns.work/" class="project-link"
                   >Check it out</a
                 >
                 <a
                   href="https://github.com/jplace/pronouns"
                   class="project-link"
-                  >View code</a
+                  >View the code</a
                 >
-              </p>
+              </div>
             </div>
           </article>
           <article class="card">
             <div class="card-image">
-              <img src="/images/music.png" class="image" />
+              <img src="/images/music.png" />
             </div>
             <div class="card-body">
-              <h3>Music Production</h3>
-              <p>I turned my friends' Instagram post into a website!</p>
-              <p>
-                <a href="https://pronouns.work/" class="project-link"
-                  >Check it out</a
-                >
+              <div>
+                <h3 class="card-header">Music Production</h3>
+                <p class="card-description copy">
+                  I have been producing electronic music. Right now, I'm
+                  exploring the modern dancehall sound.
+                </p>
+              </div>
+              <div class="card-links">
                 <a
-                  href="https://github.com/jplace/pronouns"
+                  href="https://soundcloud.com/tapman90/tracks"
                   class="project-link"
-                  >View code</a
+                  >Listen to my tracks</a
                 >
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <h3>RadicalxChange's New Website</h3>
-              <p>I turned my friends' Instagram post into a website!</p>
-              <p>
-                <a href="https://pronouns.work/" class="project-link"
-                  >Check it out</a
-                >
-                <a
-                  href="https://github.com/jplace/pronouns"
-                  class="project-link"
-                  >View code</a
-                >
-              </p>
+              </div>
             </div>
           </article>
           <article class="card">
             <div class="card-body">
-              <h3>11ty Starter</h3>
-              <p>I turned my friends' Instagram post into a website!</p>
-              <p>
-                <a href="https://pronouns.work/" class="project-link"
+              <div>
+                <h3 class="card-header">RadicalxChange Website</h3>
+                <p class="card-description copy">
+                  I maintain RadicalxChange's website. I implemented the design
+                  and hooked up the CMS.
+                </p>
+              </div>
+              <div class="card-links">
+                <a href="https://www.radicalxchange.org" class="project-link"
                   >Check it out</a
                 >
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <div>
+                <h3 class="card-header">11ty Starter</h3>
+                <p class="card-description copy">
+                  Since I make so many websites, I maintain an 11ty starter to
+                  clone for future projects.
+                </p>
+              </div>
+              <div class="card-links">
                 <a
-                  href="https://github.com/jplace/pronouns"
+                  href="https://github.com/jplace/starter-11ty"
                   class="project-link"
                   >View code</a
                 >
-              </p>
+              </div>
             </div>
           </article>
         </div>
@@ -338,42 +393,19 @@
       <div class="footer-content">
         <div class="">
           <div class="footer-text">
-            <p class="copy">
+            <div class="copy">
               <span
-                >Hey!</br>This website is part of my tutorial for building personal
-                websites.&nbsp;</span
+                >Hey!<br />This website is part of my tutorial for building
+                personal websites.&nbsp;</span
               ><a
                 href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
                 class="tutorial-link"
-                >Read the tutorial</a
-              >
-            </p>
-            <!--<p>
-              <a
-                href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
-                >Read the tutorial</a
-              >
-            </p>-->
-          </div>
-        </div>
-      </div>
-      <!--
-      <div class="footer-rotate">
-        <div class="footer-correct">
-          <div class="container">
-            <div class="footer-text">
-              <span
-                >Hey! This website is part of my tutorial for building personal
-                websites.</span
-              ><a
-                href="https://github.com/jplace/jplace.github.io/blob/master/tutorial/tutorial.md"
                 >Read the tutorial</a
               >
             </div>
           </div>
         </div>
       </div>
-      -->
     </footer>
   </body>
 </html>
