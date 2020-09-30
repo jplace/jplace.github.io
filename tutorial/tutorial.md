@@ -76,13 +76,19 @@ If you don't want to design your own site, I recommend copying mine: [https://jp
 
 ### Layout
 
-In HTML, each element has a _display_ value. Make sure you understand the difference between [block and inline](https://www.w3schools.com/html/html_blocks.asp) before starting to code.
+In HTML, each element has a _display_ value. Make sure you understand the difference between [block and inline](https://www.w3schools.com/html/html_blocks.asp) before starting to code. Your layout will be almost entirely block elements. You will use inline elements to style text or horizantally-align links.
 
-Your layout will be almost entirely block elements. You will use inline elements to style text or horizantally-align links.
+Each element also has a box-sizing algorithm. I recommend using [border-box box-sizing](https://css-tricks.com/almanac/properties/b/box-sizing/) for everything. It's much more intuitive than content-box box-sizing (which is the default). To apply border-box to all elements, include this CSS anywhere in your styles.
 
-The layout of elements can be enhanced with modern CSS features: [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and [grid](https://hacks.mozilla.org/2017/10/an-introduction-to-css-grid-layout-part-1/). Reading about them can be tedious and confusing. [Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](http://cssgridgarden.com/) are games to teach you these concepts.
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+```
 
-Tip: if you need to vertically-center something, use flexbox or grid.
+When laying out elements, reach for modern CSS features: [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) and [grid](https://hacks.mozilla.org/2017/10/an-introduction-to-css-grid-layout-part-1/). Beware that reading about these features can be tedious and confusing. I recommend [Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](http://cssgridgarden.com/) to quickly learn these features.
 
 ### Colors
 
@@ -128,7 +134,7 @@ There's many details that make a site look professional.
 [Box shadows](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) add texture to your flat site. I recommend applying them to images.
 
 ```css
-box-shadow: 2px 2px 5px grey;
+box-shadow: 2px 2px 5px black;
 ```
 
 #### Line height
@@ -157,9 +163,48 @@ If your site's CSS supports small screen sizes, add this `<meta>` tag to `<head>
 </head>
 ```
 
+### Website polish
+
+When you're website is looking good, add these finish touches!
+
+#### Favicon
+
+A favicon is 32px-by-32px image that shows up in a browser tab next to your site title. I recommend using the [favicon.io emoji generator](https://favicon.io/emoji-favicons/) for painless favicons.
+
+```html
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+</head>
+```
+
+#### OpenGraph tags
+
+[OpenGraph](https://ogp.me/) tells clients like Twitter or iMessage how to preview your website when it is linked to. You can include a title, description and image for them to show.
+
+```html
+<head>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jordan Place" />
+  <meta property="og:site_name" content="Jordan Place" />
+  <meta property="og:url" content="https://jplace.github.io/" />
+  <meta
+    property="og:image"
+    content="https://jplace.github.io/images/jplace.jpg"
+  />
+  <meta
+    property="og:image:secure_url"
+    content="https://jplace.github.io/images/jplace.jpg"
+  />
+  <meta property="og:image:width" content="100" />
+  <meta property="og:image:height" content="150" />
+  <meta property="og:description" content="Jordan Place's personal website" />
+</head>
+```
+
 ## Other approaches
 
-Some web developers prefer not to write raw CSS. Instead, they adopt CSS frameworks, static site generators, or website builders.
+Some developers prefer not to write raw CSS. Instead, they adopt CSS frameworks, static site generators with themese, or website builders.
 
 ### CSS Frameworks
 
@@ -169,9 +214,9 @@ In my opinion, these are quite hard to use if you don't already know CSS. But, t
 
 Light-weight frameworks provide helpers for "common" things in CSS. They lead you to good, responsive designs without dictating how your site should look.
 
+- [tailwind](https://tailwindcss.com/)
 - [tachyons](https://tachyons.io/)
 - [skeleton](http://getskeleton.com/)
-- [tailwind](https://tailwindcss.com/)
 - [bulma](https://bulma.io/)
 
 #### Heavy-weight
