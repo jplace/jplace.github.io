@@ -36,6 +36,10 @@ Create a file called _index.html_. Put some HTML scaffolding in it.
 Serve the HTML using Python's SimpleHTTPServer. This Python module accepts HTTP requests and responds with file contents matching the requested path.
 
 ```bash
+# python 3
+python -m http.server 7999
+
+# python 2
 python -m SimpleHTTPServer 7999
 ```
 
